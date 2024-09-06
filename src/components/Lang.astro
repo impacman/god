@@ -1,0 +1,234 @@
+---
+import Picture from './Picture.astro';
+import { languages } from '../config.json';
+
+const { lang } = Astro.props;
+
+const removeLanguage = () => {
+	if (languages.includes(lang)) {
+		return languages.filter((item) => item !== lang);
+	}
+	return languages;
+};
+---
+
+<div class="lang">
+	<div class="lang__icon">
+		<Picture
+			picture={{
+				src: `flags/${lang}`,
+				alt: lang.toUpperCase()
+			}}
+			format={'jpg'}
+		/>
+	</div>
+	<div class="lang__text">{lang}</div>
+	<div class="lang__arrow">
+		<svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+			<g opacity="0.4">
+				<path d="M4.60584 5.89665L9.16001 10.4508L13.7142 5.89665L14.885 7.06748L9.16001 12.7925L3.43501 7.06748L4.60584 5.89665Z" fill="white"
+				></path>
+			</g>
+		</svg>
+	</div>
+	<div class="lang__body">
+		{
+			removeLanguage().map((el) => (
+				<a href={`/${el === 'en' ? '' : el}`} class="lang__body-item">
+					{el}
+				</a>
+			))
+		}
+	</div>
+</div>
+
+<style lang="scss">
+	.lang {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		background: rgba(19, 19, 19, 0.35);
+		backdrop-filter: blur(14.3125px);
+
+		&.scroll {
+			display: none;
+		}
+
+		@include des {
+			width: d(94);
+			height: d(44);
+			border-radius: d(100);
+			padding: d(8) d(14);
+		}
+
+		@include tab {
+			width: t(94);
+			height: t(44);
+			border-radius: t(100);
+			padding: t(8) t(14);
+		}
+
+		@include mob {
+			width: m(85);
+			height: m(42);
+			border-radius: m(100);
+			padding: m(8) m(11);
+		}
+
+		&__body {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			transform: translateY(110%);
+
+			background: rgba(19, 19, 19, 0.35);
+			backdrop-filter: blur(14.3125px);
+
+			display: flex;
+			flex-direction: column;
+
+			opacity: 0;
+			pointer-events: none;
+			visibility: hidden;
+			transition: all 0.4s ease 0s;
+
+			.show & {
+				opacity: 1;
+				visibility: visible;
+				pointer-events: auto;
+			}
+
+			@include des {
+				border-radius: d(20);
+				padding: d(8);
+				grid-gap: d(8);
+			}
+
+			@include tab {
+				border-radius: t(20);
+				padding: t(8) t(14);
+				grid-gap: t(8);
+			}
+
+			@include mob {
+				border-radius: m(20);
+				padding: m(8) m(11);
+				grid-gap: m(8);
+			}
+
+			&-item {
+				color: var(--white);
+				font-weight: 700;
+				text-transform: uppercase;
+				border-radius: inherit;
+
+				background: rgba(19, 19, 19, 0.35);
+				backdrop-filter: blur(14.3125px);
+
+				display: flex;
+				align-items: center;
+
+				@include des {
+					height: d(30);
+					padding: 0 d(14);
+					font-size: d(12);
+					letter-spacing: d(0.24);
+				}
+
+				@include tab {
+					height: t(30);
+					padding: 0 t(14);
+					font-size: t(12);
+					letter-spacing: t(0.24);
+				}
+
+				@include mob {
+					height: m(30);
+					padding: 0 m(11);
+					font-size: m(11);
+					letter-spacing: m(1.1);
+				}
+			}
+		}
+
+		&__icon {
+			position: relative;
+			border-radius: 50%;
+			overflow: hidden;
+
+			@include des {
+				width: d(20);
+				height: d(20);
+			}
+
+			@include tab {
+				width: t(20);
+				height: t(20);
+			}
+
+			@include mob {
+				width: m(18);
+				height: m(18);
+			}
+		}
+
+		&__text {
+			color: var(--white);
+			font-weight: 700;
+			text-transform: uppercase;
+
+			@include des {
+				font-size: d(12);
+				letter-spacing: d(0.24);
+			}
+
+			@include tab {
+				font-size: t(12);
+				letter-spacing: t(0.24);
+			}
+
+			@include mob {
+				font-size: m(11);
+				letter-spacing: m(1.1);
+			}
+		}
+
+		&__arrow {
+			position: relative;
+
+			@include des {
+				width: d(18);
+				height: d(18);
+			}
+
+			@include tab {
+				width: t(18);
+				height: t(18);
+			}
+
+			@include mob {
+				width: m(16);
+				height: m(16);
+			}
+
+			& svg {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+</style>
+
+<script>
+	const lang = document.querySelector('.lang');
+
+	lang.addEventListener('click', () => {
+		lang.classList.toggle('show');
+	});
+</script>

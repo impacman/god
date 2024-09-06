@@ -1,0 +1,56 @@
+---
+import Container from '../components/Container.astro';
+import Title from '../components/Title.astro';
+import Descr from '../components/Descr.astro';
+import Picture from '../components/Picture.astro';
+import Button from '../components/Button.astro';
+
+import { title, descr, picture, button } from '../data/contactus.json';
+
+const { lang } = Astro.props;
+---
+
+<div class="contact-us" id="contact-us">
+	<div class="contact-us__bg">
+		<Picture picture={picture} format={'jpg'} />
+	</div>
+	<Container>
+		<div class="contact-us__wrap">
+			<Title lang={lang} title={title} mod={'about'} white />
+			<Descr lang={lang} descr={descr} mod={'contact-us'} />
+			<Button lang={lang} data={button} mod={'list'} light={'white'} tg />
+		</div>
+	</Container>
+</div>
+
+<style lang="scss">
+	.contact-us {
+		position: relative;
+
+		&__bg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+		}
+
+		&__wrap {
+			@include des {
+				width: d(490);
+				padding: d(99) 0 d(159);
+			}
+
+			@include tab {
+				width: t(490);
+				padding: t(99) 0 t(159);
+			}
+
+			@include mob {
+				padding: m(58) 0 m(262);
+				text-align: center;
+			}
+		}
+	}
+</style>

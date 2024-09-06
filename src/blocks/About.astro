@@ -1,0 +1,110 @@
+---
+import Container from '../components/Container.astro';
+import Title from '../components/Title.astro';
+import Descr from '../components/Descr.astro';
+import List from '../components/List.astro';
+import Picture from '../components/Picture.astro';
+
+import { title, list, descr, picture, love } from '../data/about.json';
+
+const { lang } = Astro.props;
+---
+
+<div class="about" id="about">
+	<Container>
+		<div class="about__grid">
+			<div class="about__wrap">
+				<Title lang={lang} title={title} mod={'about'} />
+				<Descr lang={lang} descr={descr} mod={'big'} section={'about'} />
+				<List lang={lang} list={list} mod={'big'} />
+			</div>
+			<div class="about__img">
+				<Picture picture={picture} />
+			</div>
+			<div class="about__love">
+				<Picture picture={love} format={'jpg'} />
+			</div>
+		</div>
+	</Container>
+</div>
+
+<style lang="scss">
+	.about {
+		position: relative;
+		z-index: 1;
+
+		&__grid {
+			display: grid;
+
+			@include des {
+				padding: d(144) 0 d(120);
+				grid-template-columns: d(504) auto;
+				grid-gap: d(150);
+				justify-content: space-between;
+			}
+
+			@include tab {
+				padding: t(144) 0 t(120);
+				grid-template-columns: t(504) auto;
+				grid-gap: t(150);
+				justify-content: space-between;
+			}
+
+			@include mob {
+				padding: m(76) 0 m(32);
+			}
+		}
+
+		&__wrap {
+			width: 100%;
+		}
+
+		&__img {
+			position: relative;
+			z-index: 2;
+
+			@include des {
+				width: d(432);
+				height: d(308);
+				margin-top: d(66);
+			}
+
+			@include tab {
+				width: t(432);
+				height: t(308);
+				margin-top: t(66);
+			}
+
+			@include mob {
+				width: m(277);
+				height: m(197);
+				margin: m(64) auto 0;
+			}
+		}
+
+		&__love {
+			position: absolute;
+			right: 0;
+			z-index: 1;
+
+			@include des {
+				width: d(451);
+				height: d(742);
+				bottom: d(-90);
+			}
+
+			@include tab {
+				width: t(451);
+				height: t(742);
+				bottom: t(-90);
+			}
+
+			@include mob {
+				width: 100%;
+				height: m(611);
+				z-index: -1;
+				bottom: m(-280);
+			}
+		}
+	}
+</style>

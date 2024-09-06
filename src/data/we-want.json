@@ -1,0 +1,90 @@
+{
+	"block": {
+		"title": {
+			"type": "h2",
+			"text": {
+				"en": "What do we want?",
+				"ru": "Чего мы хотим?",
+				"es": "¿Qué queremos?"
+			}
+		},
+		"descr": {
+			"text": {
+				"en": [
+					"To meet the great demand of dynamically developing market, we have to expand our business to new regions, moving our boundaries and integrating new features to our infrastructure making it more diverse and profitable.",
+					"We look for business partners who are able to make the expansion flawless and lucrative"
+				],
+				"ru": [
+					"Чтобы удовлетворить большой спрос динамично развивающегося рынка мы должны развивать наш бизнес в новых регионах. Расширять границы, интегрируя новые функции в нашу инфраструктуру, делая ее более разнообразной и прибыльной.",
+					"Мы ищем деловых партнеров, которые могут способствовать развитию и увеличению доходов. "
+				],
+				"es": [
+					"Para satisfacer la gran demanda del mercado en dinámico desarrollo, tenemos que ampliar nuestro negocio a nuevas regiones, moviendo nuestras fronteras e integrando nuevas funciones a nuestra infraestructura para hacerla más diversa y rentable.",
+					"Buscamos socios afiliados capaces de hacer que la expansión sea impecable y lucrativa."
+				]
+			}
+		},
+		"picture": {
+			"src": "we-want",
+			"alt": "What do we want"
+		}
+	},
+	"content": {
+		"title": {
+			"type": "h3",
+			"text": {
+				"en": "When do we want it?",
+				"ru": "Когда мы этого хотим?",
+				"es": "¿Cuándo lo queremos?"
+			}
+		},
+		"descr": {
+			"text": {
+				"en": ["We are already expanding our business to your region, so become a business Partner now."],
+				"ru": ["Мы уже развиваем наш бизнес в вашем регионе, так что присоединяйтесь к нам прямо сейчас."],
+				"es": ["Ya estamos expandiendo nuestro negocio a su región, así que conviértase en socio afiliado ahora."]
+			}
+		},
+		"listtitle": {
+			"type": "h4",
+			"text": {
+				"en": "You will get:",
+				"ru": "Вы получите:",
+				"es": "Obtendrá:"
+			}
+		},
+		"list": {
+			"text": {
+				"en": [
+					"A chance to be a partner to an international IT leader",
+					"A full guidance into the world of GirlsOnlyDating.com",
+					"No upper limit for income",
+					"A chance to run your own enterprise",
+					"Supporting and motivational programs"
+				],
+				"ru": [
+					"Шанс стать партнером международного IT-лидера",
+					"Полное погружение в мир GirlsOnlyDating.com",
+					"Постоянно растущий доход",
+					"Шанс начать свое собственное дело",
+					"Поддерживающие и мотивационные программы"
+				],
+				"es": [
+					"La oportunidad de ser socio afiliado del líder internacional de TI",
+					"Una guía completa en el mundo de GirlsOnlyDating.com",
+					"Sin límite máximo de ingresos",
+					"La oportunidad de dirigir su propia empresa",
+					"Programas de apoyo y motivación"
+				]
+			}
+		},
+		"button": {
+			"href": "#contact-us",
+			"text": {
+				"en": "Become a Partner",
+				"ru": "Станьте партнером",
+				"es": "Conviértete en socio"
+			}
+		}
+	}
+}

@@ -1,0 +1,91 @@
+---
+import Container from '../components/Container.astro';
+import Title from '../components/Title.astro';
+import List from '../components/List.astro';
+import Button from '../components/Button.astro';
+import Picture from '../components/Picture.astro';
+
+import { title, list, button, picture } from '../data/welcome.json';
+
+const { lang } = Astro.props;
+---
+
+<div class="welcome">
+	<div class="welcome__bg">
+		<Picture picture={picture} format={'jpg'} />
+	</div>
+	<Container>
+		<div class="welcome__wrap">
+			<div class="welcome__block">
+				<Title lang={lang} title={title} mod={'welcome'} />
+				<List lang={lang} list={list} />
+				<Button lang={lang} data={button} />
+			</div>
+		</div>
+	</Container>
+</div>
+
+<style lang="scss">
+	.welcome {
+		position: relative;
+		z-index: 2;
+
+		&__bg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+		}
+
+		&__wrap {
+			min-height: 100vh;
+			display: flex;
+			align-items: flex-end;
+			justify-content: flex-start;
+
+			@include des {
+				width: 100%;
+				padding: d(62) 0;
+			}
+
+			@include tab {
+				width: 100%;
+				padding: t(62) 0;
+			}
+
+			@include mob {
+				width: 100vw;
+				margin: 0 m(-32);
+				padding: m(200) m(14) m(40);
+			}
+		}
+
+		&__block {
+			display: flex;
+			flex-direction: column;
+			background-color: var(--white-lilac);
+
+			@include des {
+				width: d(478);
+				border-radius: d(36);
+				padding: d(44) d(44) d(56);
+				grid-gap: d(32);
+			}
+
+			@include tab {
+				width: t(478);
+				border-radius: t(36);
+				padding: t(44) t(44) t(56);
+				grid-gap: t(32);
+			}
+
+			@include mob {
+				border-radius: m(24);
+				padding: m(28) m(32);
+				grid-gap: m(24);
+			}
+		}
+	}
+</style>

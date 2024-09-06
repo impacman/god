@@ -1,0 +1,39 @@
+---
+import Container from '../components/Container.astro';
+import Title from '../components/Title.astro';
+import Button from '../components/Button.astro';
+
+import AccordionUI from '../UI/accordion';
+
+import { title, items, button } from '../data/faq.json';
+
+const { lang } = Astro.props;
+---
+
+<div class="faq" id="faq">
+	<Container visible>
+		<div class="faq__wrap">
+			<Title lang={lang} title={title} mod={'identical'} />
+			<AccordionUI client:only="react" items={items} />
+			<Button lang={lang} data={button} mod={'list'} />
+		</div>
+	</Container>
+</div>
+
+<style lang="scss">
+	.faq {
+		&__wrap {
+			@include des {
+				padding: d(44) 0 d(144);
+			}
+
+			@include tab {
+				padding: t(44) 0 t(144);
+			}
+
+			@include mob {
+				padding: m(46) 0 m(104);
+			}
+		}
+	}
+</style>

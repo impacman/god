@@ -1,0 +1,132 @@
+{
+	"title": {
+		"type": "h2",
+		"text": {
+			"en": "Our Affiliate Partners",
+			"ru": "Наши бизнес-артнеры",
+			"es": "Nuestros Socios Afiliados"
+		}
+	},
+	"items": [
+		{
+			"title": {
+				"type": "h3",
+				"text": {
+					"en": "Who is the perfect affiliate Partner for us?",
+					"ru": "Кто является для нас идеальным деловым партнером?",
+					"es": "¿Quién es el socio afiliado perfecto para nosotros?"
+				},
+				"white": true
+			},
+			"listtitle": {
+				"type": "h4",
+				"text": {
+					"en": "Well, it’s someone who...",
+					"ru": "Итак…",
+					"es": "Pues..."
+				}
+			},
+			"list": {
+				"creative": true,
+				"text": {
+					"en": [
+						"Loves to work with people",
+						"Is patient and goal oriented",
+						"Wants to be a boss of his own business without investments",
+						"Knows how to present a product and generate interest to it",
+						"Is fluent in English",
+						"Freely uses computer and internet",
+						"A person of LGBT community"
+					],
+					"ru": [
+						"Любит работать с людьми",
+						"Является терпеливым и целеустремленным",
+						"Хочет иметь собственный бизнес без вложений",
+						"Знает, как представить продукт и вызвать к нему интерес",
+						"Свободно владеет английским языком",
+						"Свободно пользуется компьютером и интернетом",
+						"Находится в ЛГБТ сообществе"
+					],
+					"es": [
+						"Le gusta trabajar con gente",
+						"Es paciente y orientado a objetivos",
+						"Quiere ser el jefe de su propio negocio sin inversiones",
+						"Sabe cómo presentar un producto y generar interés ",
+						"Habla inglés/español con fluidez",
+						"Utiliza libremente el ordenador e internet",
+						"Está unid@ a LGBT"
+					]
+				}
+			},
+			"button": {
+				"href": "#contact-us",
+				"text": {
+					"en": "Become a Partner",
+					"ru": "Станьте партнером",
+					"es": "Conviértete en socio"
+				}
+			}
+		},
+		{
+			"title": {
+				"type": "h3",
+				"text": {
+					"en": "Who is the perfect affiliate Partner for us?",
+					"ru": "Кто является для нас идеальным деловым партнером?",
+					"es": "¿Quién es el socio afiliado perfecto para nosotros?"
+				},
+				"transparent": true
+			},
+			"listtitle": {
+				"type": "h4",
+				"text": {
+					"en": "Responsibilities:",
+					"ru": "Обязанности:",
+					"es": "Responsabilidades:..."
+				}
+			},
+			"list": {
+				"text": {
+					"en": [
+						"Start your own business agency on our website",
+						"Search for potential website users in your area by promoting your business agency",
+						"Registration of the male and female profile in your business agency account on our website",
+						"Managing your business agency database",
+						"Supporting members of your business agency (translation, introduction of work rules, overall support)",
+						"Planning and development of effective business strategies for your business to grow an generate higher income"
+					],
+					"ru": [
+						"Создание собственного бизнес-агентства на нашем сайте",
+						"Поиск потенциальных пользователей веб-сайта в вашем регионе",
+						"Регистрация мужских и женских профилей в вашей административной панели на нашем сайте",
+						"Управление базой данных вашего бизнес-агентства",
+						"Поддержка сотрудников вашего бизнес-агентства (перевод, введение правил работы, общая поддержка)",
+						"Планирование и разработка эффективных бизнес-стратегий для роста вашего бизнеса и получения более высокого дохода"
+					],
+					"es": [
+						"Crear su propia agencia en nuestro sitio web",
+						"Búsqueda de usuarios potenciales del sitio web en su zona mediante la promoción de su agencia de negocios",
+						"Registro del perfil masculino y femenino en su cuenta de agencia de negocios en nuestro sitio web",
+						"Gestión de la base de datos de su agencia ",
+						"Apoyo a los usuarios de su agencia (traducción, introducción de normas de trabajo, apoyo general)",
+						"Planificación y desarrollo de estrategias comerciales eficaces para que su negocio crezca y genere mayores ingresos"
+					]
+				}
+			},
+			"picture": {
+				"src": "partners",
+				"alt": "People"
+			}
+		}
+	],
+	"projects": {
+		"title": {
+			"type": "h3",
+			"text": {
+				"en": "Our projects",
+				"ru": "Наши проекты",
+				"es": "Nuestros Proyectos"
+			}
+		}
+	}
+}

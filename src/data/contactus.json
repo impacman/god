@@ -1,0 +1,28 @@
+{
+	"title": {
+		"type": "h2",
+		"text": { "en": "Contact us", "ru": "Наши контакты", "es": "Nuestros contactos" }
+	},
+	"descr": {
+		"text": {
+			"en": ["You can easily get in contact with us by telegram:"],
+			"ru": ["Вы можете связаться с нами через телеграм:"],
+			"es": ["Puede ponerse en contacto con nosotros a través de telegram:"]
+		}
+	},
+	"picture": {
+		"srcadapive": {
+			"desktop": "contact-us-desktop",
+			"mobile": "contact-us-mobile"
+		},
+		"alt": "Contact Us"
+	},
+	"button": {
+		"href": "https://t.me/pam_GirlsOnlyDating_GirlsOnly_bot",
+		"text": {
+			"en": "GirlsOnlyDating Partner",
+			"ru": "GirlsOnlyDating Partner",
+			"es": "GirlsOnlyDating Partner"
+		}
+	}
+}

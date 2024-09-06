@@ -1,0 +1,36 @@
+---
+const { mod, light } = Astro.props;
+---
+
+<div class={`dev${mod ? ` dev--${mod}` : ''}${light ? ` dev--light` : ''}`}></div>
+
+<style lang="scss">
+	.dev {
+		width: 100%;
+		background-color: var(--eggplant);
+		opacity: 0.12;
+
+		&--light {
+			background-color: var(--white);
+		}
+
+		@include des {
+			height: d(1);
+			margin: d(24) 0;
+		}
+
+		@include tab {
+			height: t(1);
+			margin: t(24) 0;
+		}
+
+		@include mob {
+			height: m(1);
+			margin: m(16) 0;
+		}
+
+		&--min {
+			margin-top: 0;
+		}
+	}
+</style>

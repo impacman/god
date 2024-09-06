@@ -1,0 +1,42 @@
+{
+	"title": {
+		"type": "h2",
+		"text": {
+			"en": "Who we are",
+			"ru": "О нас",
+			"es": "Quienes somos"
+		}
+	},
+	"descr": {
+		"text": {
+			"en": ["GirlsOnlyDating.com is an international online dating platform that delivers the best communication service since 2014."],
+			"ru": [
+				"GirlsOnlyDating.com - это международная платформа онлайн-знакомств, которая предоставляет лучшие коммуникационные сервисы между людьми с 2014 года."
+			],
+			"es": [
+				"GirlsOnlyDating.com es una plataforma internacional de citas online que ofrece el mejor servicio de comunicación desde 2014 para los perfiles LGBT."
+			]
+		}
+	},
+	"list": {
+		"text": {
+			"en": [
+				"Behind the platform, there is an international team of professionals who diligently spend person-hours to provide the constantly growing market with the best quality of online dating services for LGBT community."
+			],
+			"ru": [
+				"За платформой стоит международная команда профессионалов, которая делает все возможное, чтобы предоставить постоянно растущему рынку услуги онлайн-знакомств самого высокого качества для ЛГБТ коммьюнити."
+			],
+			"es": [
+				"Detrás de la plataforma hay un equipo internacional de profesionales que hacen todo lo posible por ofrecer al mercado, en constante crecimiento, servicios de citas online de la máxima calidad."
+			]
+		}
+	},
+	"picture": {
+		"src": "about",
+		"alt": "Who we are"
+	},
+	"love": {
+		"src": "love",
+		"alt": "Love"
+	}
+}

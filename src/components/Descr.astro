@@ -1,0 +1,162 @@
+---
+const { descr, mod, section, lang } = Astro.props;
+const { text } = descr;
+---
+
+<p class={`descr descr--${mod ? mod : 'default'}${section ? ` descr--${section}` : ''}`}>
+	{text[lang].map((item) => <span set:html={item} />)}
+</p>
+
+<style lang="scss">
+	.descr {
+		color: var(--eggplant);
+
+		&--big {
+			font-weight: 500;
+
+			@include des {
+				font-size: d(34);
+				letter-spacing: d(0.34);
+				line-height: 125%;
+			}
+
+			@include tab {
+				font-size: t(34);
+				letter-spacing: t(0.34);
+				line-height: 125%;
+			}
+
+			@include mob {
+				font-size: m(28);
+				letter-spacing: m(0.28);
+				line-height: 120%;
+			}
+		}
+
+		&--default {
+			line-height: 135%;
+
+			@include des {
+				font-size: d(20);
+				letter-spacing: d(-0.03);
+			}
+
+			@include tab {
+				font-size: t(20);
+				letter-spacing: t(-0.03);
+			}
+
+			@include mob {
+				font-size: m(16);
+				letter-spacing: m(-0.024);
+			}
+		}
+
+		&--chart {
+			color: var(--white);
+			line-height: 125%;
+
+			@include des {
+				font-size: d(36);
+				letter-spacing: d(0.72);
+			}
+
+			@include tab {
+				font-size: t(36);
+				letter-spacing: t(0.72);
+			}
+
+			@include mob {
+				font-size: m(22);
+				letter-spacing: m(0.44);
+			}
+		}
+
+		&--chart-price {
+			color: var(--white);
+			line-height: 100%;
+
+			@include des {
+				font-size: d(128);
+				letter-spacing: d(4.48);
+			}
+
+			@include tab {
+				font-size: t(128);
+				letter-spacing: t(4.48);
+			}
+
+			@include mob {
+				font-size: m(80);
+				letter-spacing: m(2.8);
+			}
+		}
+
+		&--contact-us {
+			color: var(--white);
+			font-size: 54px;
+			line-height: 115%;
+
+			@include des {
+				font-size: d(54);
+				letter-spacing: d(1.08);
+			}
+
+			@include tab {
+				font-size: t(54);
+				letter-spacing: t(1.08);
+			}
+
+			@include mob {
+				font-size: m(40);
+				letter-spacing: m(0.6);
+				text-align: center;
+			}
+		}
+
+		// sections
+		&--about {
+			@include des {
+				margin-bottom: d(28);
+			}
+
+			@include tab {
+				margin-bottom: t(28);
+			}
+
+			@include mob {
+				margin-bottom: m(24);
+			}
+		}
+
+		&--we-want-block {
+			display: flex;
+			flex-direction: column;
+
+			@include des {
+				grid-gap: d(24);
+			}
+
+			@include tab {
+				grid-gap: t(24);
+			}
+
+			@include mob {
+				grid-gap: m(16);
+			}
+		}
+		&--we-want-content {
+			@include des {
+				line-height: 150%;
+			}
+
+			@include tab {
+				line-height: 150%;
+			}
+
+			@include mob {
+				line-height: 135%;
+			}
+		}
+	}
+</style>

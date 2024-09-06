@@ -1,0 +1,203 @@
+---
+import Page from '../components/Page.astro';
+import Header from '../components/Header.astro';
+
+interface Props {
+	pageSettings: {
+		title: string;
+		descr: string;
+		lang: string;
+	};
+}
+
+const { pageSettings } = Astro.props;
+---
+
+<!doctype html>
+<html lang={pageSettings.lang}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name={pageSettings.descr} content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{pageSettings.title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<Header lang={pageSettings.lang} />
+		<Page>
+			<slot />
+		</Page>
+	</body>
+</html>
+<style is:global lang="scss">
+	:root {
+		--black: #000;
+		--white: #fff;
+		--transparent: rgba(0, 0, 0, 0);
+		--white-lilac: #fcd9e2;
+		--eggplant: #4e3245;
+		--twilight: #fe9cb2;
+		--pink-lace: #fbd9e7;
+		--athens-gray: #eaecf2;
+		--mercury: #e6e3e3;
+		--amethyst: #b569c4;
+		--wisp-pink: #fdecf4;
+		--vivid-violet: #9c3aaf;
+		--charleston-green: #292424;
+		--eggplant-purple: #6d4669;
+		--lavender-blush: #feecf0;
+		--pale-pink: #fde1e7;
+
+		--font-default: sans-serif;
+		--font-nunito-sans: 'Nunito Sans', var(--font-default);
+		--font-dm-sans: 'DM Sans', var(--font-default);
+	}
+
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	html,
+	body {
+		width: 100%;
+		min-height: 100%;
+		font-family: var(--font-nunito-sans);
+		font-size: 14px;
+		line-height: 1;
+		font-weight: 400;
+		color: var(--white);
+		background-color: var(--bg-color);
+		overflow-x: hidden;
+		user-select: none;
+		scroll-behavior: smooth;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		font-size: inherit;
+		font-weight: inherit;
+	}
+
+	ul,
+	ol {
+		list-style: none;
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	img,
+	picture,
+	video,
+	canvas,
+	svg {
+		display: block;
+		max-width: 100%;
+	}
+
+	input,
+	button,
+	textarea,
+	select {
+		font: inherit;
+	}
+
+	button,
+	[role='button'] {
+		background: transparent;
+		border: none;
+		cursor: pointer;
+	}
+
+	button,
+	input,
+	textarea,
+	select,
+	a {
+		font-family: inherit;
+		color: inherit;
+	}
+
+	input,
+	textarea,
+	select,
+	button {
+		line-height: inherit;
+	}
+
+	:focus {
+		outline: none;
+	}
+
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+	fieldset {
+		border: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	button {
+		font-family: inherit;
+	}
+
+	textarea {
+		resize: vertical;
+	}
+
+	input[type='number'] {
+		-moz-appearance: textfield;
+	}
+
+	input[type='number']::-webkit-outer-spin-button,
+	input[type='number']::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	::-webkit-scrollbar {
+		width: 0;
+		height: 0;
+	}
+
+	br {
+		@include des {
+			&.mobile {
+				display: none;
+			}
+		}
+
+		@include tab {
+			&.mobile {
+				display: none;
+			}
+		}
+
+		@include mob {
+			&.desktop {
+				display: none;
+			}
+		}
+	}
+</style>

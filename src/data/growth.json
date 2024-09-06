@@ -1,0 +1,30 @@
+{
+	"title": {
+		"type": "h2",
+		"text": {
+			"en": "We're growing up fast.<br class='desktop'> Get in the flow",
+			"ru": "Наше развитие",
+			"es": "Nuestro crecimiento"
+		}
+	},
+	"list": {
+		"text": {
+			"en": [
+				"During the last 8 years, our social communication network has made a major leap into the best premium online dating segment that meets the growing demand for human interaction across the online world.",
+				"We bring you the chance to increase your income by working together with us. Start right now by completing the application form in the system."
+			],
+			"ru": [
+				"За последние 8 лет наша сеть социальных коммуникаций совершила значительный скачок в лучший сегмент онлайн-знакомств премиум-класса, который отвечает растущему спросу на человеческое взаимодействие в онлайн-мире. Однако наш рост не был бы возможен без партнерства сотен успешных локальных деловых партнеров.",
+				"Мы предоставляем вам возможность увеличить свой доход, работая вместе с нами. Начните прямо сейчас, заполнив форму заявки в системе."
+			],
+			"es": [
+				"Durante los últimos 8 años, nuestra red de comunicación social ha dado un gran salto hasta convertirse en el mejor segmento de citas online premium que satisface la creciente demanda de interacción humana en todo el mundo online. Sin embargo, nuestro crecimiento nunca habría sido posible sin la colaboración de cientos de exitosos socios afiliados locales.",
+				"Te ofrecemos la oportunidad de aumentar tus ingresos trabajando con nosotros. Empieza ahora mismo rellenando el formulario de solicitud del sistema."
+			]
+		}
+	},
+	"picture": {
+		"src": "growth",
+		"alt": "We're growing up fast"
+	}
+}

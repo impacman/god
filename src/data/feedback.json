@@ -1,0 +1,102 @@
+{
+	"title": {
+		"type": "h2",
+		"text": {
+			"en": "Our partner’s feedback",
+			"ru": "Отзывы наших партнеров",
+			"es": "Reseñas de nuestros soicos"
+		}
+	},
+	"items": [
+		{
+			"descr": "<b>I am a partner of the company for about one year now. I decided to do it because I wanted to have time to spend with my child and I wanted to make my own business.</b><br><br> I really like the flexibility of the job and possibility to make my own team. Here I can be creative, I can push my limits, I can go outside of the box and in the end, it is worth it. The most satisfying moment in this business for me was when I realized that all team members were satisfied with their job and in one moment, I realized that I did a great job.",
+			"user": {
+				"picture": {
+					"src": "avatars/5",
+					"alt": "Tamara"
+				},
+				"name": "Tamara, Serbia"
+			}
+		},
+		{
+			"descr": "<b>I achieved great success from cooperating with the business development team. They helped me build my business. They have been very supportive, informative and professional.</b><br><br> Now my business is stable and it has great earnings. None of that would come true without hem. Thank you for everything and I cannot wait for new goals that we reach together!",
+			"user": {
+				"picture": {
+					"src": "avatars/6",
+					"alt": "Oksana"
+				},
+				"name": "Oksana, Ukraine"
+			}
+		},
+		{
+			"descr": "<b>I love what I do. I do not think of it as a job because I am managing my own business and I take all decisions myself. I would definitely suggest this opportunity to a friend.</b><br><br> These days it is not easy to find a job in Serbia and this business gives a great chance.",
+			"user": {
+				"picture": {
+					"src": "avatars/7",
+					"alt": "Lejla"
+				},
+				"name": "Lejla, Serbia"
+			}
+		},
+		{
+			"descr": "<b>We would like to express great gratitude to the company, which directed us to the world of dating, socializing and building good interpersonal relations.</b><br><br> This is our first experience with this type of business. It is a great pleasure and happiness that we have the opportunity to be part of a team whose members are efficient, professional, helpful and friendly young people who are ready at any time to meet our questions or to help us to solve some situations<br><br>.In a short time, we seized our opportunity to achieve business success and positive financial results that had additionally motivated us, so we are ready to do our, best to move forward and we are doing everything to maintain good work in reaching a common goal.",
+			"user": {
+				"picture": {
+					"src": "avatars/1",
+					"alt": "Predrag, Serbia"
+				},
+				"name": "Predrag, Serbia"
+			}
+		},
+		{
+			"descr": "<b>The best part of this job for me is photo shooting and participating in promotions.</b><br><br> That is always fun. My life changed with this business, I have a lot of free time now. It allows me to work from home and travel a lot. Now I do not have to get up early in the morning and do not have to explain anything to anyone.",
+			"user": {
+				"picture": {
+					"src": "avatars/2",
+					"alt": "Borislav"
+				},
+				"name": "Borislav, Bulgaria"
+			}
+		},
+		{
+			"descr": "<b>First of all I would like to show gratitude to the professional and dedicated team.</b><br><br> Ever since my beginning in 2015 they showed nothing but professionalism and top notch support. Their motivation helped me in every way possible. On this path, we shared our common goal for matching people with their soulmates, for me it is only several months, however these guys are doing this since 1993. Good job and keep it up.",
+			"user": {
+				"picture": {
+					"src": "avatars/3",
+					"alt": "Bojan"
+				},
+				"name": "Bojan, Macedonia"
+			}
+		},
+		{
+			"descr": "<b>I started my work three months ago and everything is according to plan. Every day I try to improve myself and to add new faces to the website. I think in the future I can make a very consistent monthly income!</b><br><br> I like working next to a team of professionals! I love the market I entered and I want to develop my business as much as possible!",
+			"user": {
+				"picture": {
+					"src": "avatars/4",
+					"alt": "Octavian"
+				},
+				"name": "Octavian, Romania"
+			}
+		},
+		{
+			"descr": "<b>I have been with the company for two and a half years now. I heard about the business from one of my close friends and then I came across an ad on the Internet and decided to apply.</b><br><br> At the beginning, I had my doubts but after working hard on a lot of development and spread the network, everything is working very well for us. Relationships I build during my work is what makes it a great for me.<br><br> Not to mention that the company is very reliable, everything is covered and everything is on time.",
+			"user": {
+				"picture": {
+					"src": "avatars/8",
+					"alt": "Djordje"
+				},
+				"name": "Djordje, Serbia"
+			}
+		},
+		{
+			"descr": "<b>I have known about the company since 2004. They are professionals who are worth collaborating with. They helped me start my business in March of 2014 and I am very satisfied so far with the results.</b><br><br> A team of expert managers taught me how to build my business and now we plan to expand.",
+			"user": {
+				"picture": {
+					"src": "avatars/9",
+					"alt": "Dimitrios"
+				},
+				"name": "Dimitrios, Athens"
+			}
+		}
+	]
+}

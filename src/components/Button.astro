@@ -1,0 +1,122 @@
+---
+import Tg from '../svg/Tg.astro';
+
+const { data, mod, light, tg, lang } = Astro.props;
+const { href, text } = data;
+
+const Tag = href ? 'a' : 'button';
+---
+
+<Tag
+	href={href ? href : null}
+	class={`button button--${light ? `${typeof light === 'string' ? light : 'light'}` : 'default'}${mod ? ` button--${mod}` : ''}`}
+>
+	{tg && <Tg />}
+	<span>{text[lang]}</span>
+</Tag>
+
+<style lang="scss">
+	.button {
+		width: 100%;
+		font-weight: 700;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		transition: background-color 0.1s ease 0s;
+
+		@include des {
+			height: d(64);
+			border-radius: d(100);
+			font-size: d(17);
+			letter-spacing: d(-0.042);
+			padding: 0 d(10);
+		}
+
+		@include tab {
+			height: t(64);
+			border-radius: t(100);
+			font-size: t(17);
+			letter-spacing: t(-0.042);
+			padding: 0 t(10);
+		}
+
+		@include mob {
+			height: m(52);
+			border-radius: m(100);
+			font-size: m(15);
+			letter-spacing: m(0.75);
+			padding: 0 m(25);
+		}
+
+		&--default {
+			background-color: var(--eggplant);
+
+			@media (hover: hover) {
+				cursor: pointer;
+				transition-duration: 0.3s;
+
+				&:hover {
+					background-color: var(--eggplant-purple);
+				}
+			}
+
+			&:active {
+				background-color: var(--eggplant-purple);
+			}
+		}
+
+		&--light {
+			background-color: var(--twilight);
+			color: var(--eggplant);
+
+			@media (hover: hover) {
+				cursor: pointer;
+				transition-duration: 0.3s;
+
+				&:hover {
+					background-color: var(--white);
+				}
+			}
+
+			&:active {
+				background-color: var(--white);
+			}
+		}
+
+		&--white {
+			background-color: var(--pale-pink);
+			color: var(--eggplant);
+
+			@media (hover: hover) {
+				cursor: pointer;
+				transition-duration: 0.3s;
+
+				&:hover {
+					background-color: var(--twilight);
+				}
+			}
+
+			&:active {
+				background-color: var(--twilight);
+			}
+		}
+
+		&--list {
+			@include des {
+				width: d(368);
+				margin-top: d(40);
+			}
+
+			@include tab {
+				width: t(368);
+				margin-top: t(40);
+			}
+
+			@include mob {
+				width: 100%;
+				margin-top: m(28);
+			}
+		}
+	}
+</style>

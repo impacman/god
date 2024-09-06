@@ -1,0 +1,156 @@
+.accordion {
+	@include des {
+		width: d(896);
+		padding: 0 d(17);
+	}
+
+	@include tab {
+		width: t(896);
+		padding: 0 t(17);
+	}
+
+	@include mob {
+		width: 100%;
+	}
+
+	&__item {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+
+		&:not(:first-of-type) {
+			&::after {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				background-color: var(--eggplant);
+				opacity: 0.1;
+
+				@include des {
+					height: d(1);
+				}
+
+				@include tab {
+					height: t(1);
+				}
+
+				@include mob {
+					height: m(1);
+				}
+			}
+		}
+	}
+
+	&__icon {
+		position: absolute;
+		left: 0;
+		aspect-ratio: 1/1;
+
+		@include des {
+			top: 50%;
+			transform: translateY(-50%);
+			width: d(24);
+		}
+
+		@include tab {
+			top: 50%;
+			transform: translateY(-50%);
+			width: t(24);
+		}
+
+		@include mob {
+			top: m(22);
+			width: m(14);
+		}
+
+		&::after,
+		&::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: var(--twilight);
+
+			@include des {
+				width: 70%;
+				height: d(3);
+			}
+
+			@include tab {
+				width: 70%;
+				height: t(3);
+			}
+
+			@include mob {
+				width: 100%;
+				height: m(2);
+			}
+		}
+
+		&::before {
+			transform: translate(-50%, -50%) rotate(-90deg);
+			transition: transform 0.5s ease 0s;
+		}
+
+		&.active::before {
+			transform: translate(-50%, -50%) rotate(0);
+		}
+	}
+
+	&__header {
+		position: relative;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		color: var(--eggplant);
+		line-height: 140%;
+
+		@include des {
+			min-height: d(104);
+			padding: d(20) d(36);
+			font-size: d(28);
+			letter-spacing: d(-0.14);
+		}
+
+		@include tab {
+			min-height: t(104);
+			padding: t(20) t(36);
+			font-size: t(28);
+			letter-spacing: t(-0.14);
+		}
+
+		@include mob {
+			min-height: m(60);
+			padding: m(16) m(23);
+			font-size: m(20);
+			letter-spacing: m(-0.1);
+		}
+	}
+
+	&__body {
+		width: 100%;
+		color: var(--twilight);
+		line-height: 130%;
+
+		@include des {
+			padding: 0 d(36) d(40);
+			font-size: d(20);
+			letter-spacing: d(-0.1);
+		}
+
+		@include tab {
+			padding: 0 t(36) t(40);
+			font-size: t(20);
+			letter-spacing: t(-0.1);
+		}
+
+		@include mob {
+			padding: 0 m(23) m(16);
+			font-size: m(16);
+			letter-spacing: m(-0.04);
+		}
+	}
+}

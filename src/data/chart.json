@@ -1,0 +1,71 @@
+{
+	"title": {
+		"type": "h1",
+		"text": {
+			"en": "We bring you the chance to increase your income by working together with us",
+			"ru": "Мы предлагаем вам возможность увеличить свой доход, сотрудничая с нами",
+			"es": "Te ofrecemos la oportunidad de aumentar tus ingresos trabajando con nosotros"
+		}
+	},
+	"button": {
+		"href": "#contact-us",
+		"text": {
+			"en": "Start right now!",
+			"ru": "Начните прямо сейчас!",
+			"es": "¡Empieza ahora mismo!"
+		}
+	},
+	"items": [
+		{
+			"descr": {
+				"text": {
+					"en": ["Our business partners affiliate partner income"],
+					"ru": ["Доход наших деловых партнеров и партнеров по программе аффилиатов"],
+					"es": ["Ingresos de nuestros socios comerciales y afiliados"]
+				}
+			},
+			"picture": {
+				"src": "chart-item-1",
+				"alt": "Boolets"
+			}
+		},
+		{
+			"descr": {
+				"text": {
+					"en": ["GirlsOnlyDating.com partners income growth in 2024"],
+					"ru": ["Рост доходов партнеров GirlsOnlyDating.com в 2024 году"],
+					"es": ["Crecimiento de los ingresos de los socios de GirlsOnlyDating.com en 2024"]
+				}
+			},
+			"picture": {
+				"src": "chart-item-2",
+				"alt": "Chart"
+			}
+		},
+		{
+			"picture": {
+				"srcadapive": {
+					"desktop": "chart-item-3-desktop",
+					"mobile": "chart-item-3-mobile"
+				},
+				"alt": "People"
+			},
+			"info": {
+				"price": {
+					"text": {
+						"en": ["500$"],
+						"ru": ["500$"],
+						"es": ["500$"]
+					}
+				},
+				"descr": {
+					"text": {
+						"en": ["average monthly income during the first 3 months of partnership with GirlsOnlyDating.com"],
+						"ru": ["среднемесячный доход в первые 3 месяца партнерства с GirlsOnlyDating.com"],
+						"es": ["ingresos mensuales medios durante los 3 primeros meses de colaboración con GirlsOnlyDating.com"]
+					}
+				}
+			}
+		}
+	]
+}

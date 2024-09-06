@@ -1,0 +1,48 @@
+---
+import Container from '../components/Container.astro';
+---
+
+<div class="footer">
+	<Container>
+		<div class="footer__wrap"><p class="footer__text">© GirlsOnlyDating.com, 2024. All Rights Reserved.</p></div>
+	</Container>
+</div>
+
+<style lang="scss">
+	.footer {
+		&__wrap {
+			@include des {
+				padding: d(36) 0;
+			}
+
+			@include tab {
+				padding: t(36) 0;
+			}
+
+			@include mob {
+				padding: m(28) 0;
+			}
+		}
+
+		&__text {
+			color: var(--charleston-green);
+			line-height: 145%;
+			opacity: 0.6;
+
+			@include des {
+				font-size: d(16.5);
+				letter-spacing: d(-0.041);
+			}
+
+			@include tab {
+				font-size: t(16.5);
+				letter-spacing: t(-0.041);
+			}
+
+			@include mob {
+				font-size: m(11.5);
+				text-align: center;
+			}
+		}
+	}
+</style>

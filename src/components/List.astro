@@ -1,0 +1,187 @@
+---
+import Check from '../svg/Check.astro';
+
+const { list, mod, light, lang } = Astro.props;
+const { text } = list;
+
+const check = mod === 'creative' ? true : false;
+---
+
+<ul class={`list list--${mod ? mod : 'default'}${light ? ` list--light` : ''}`}>
+	{
+		text[lang].map((item) => (
+			<li class="list__item">
+				{check && (
+					<div class="list__item-check">
+						<Check light={light} />
+					</div>
+				)}
+				<span set:html={item} />
+			</li>
+		))
+	}
+</ul>
+
+<style lang="scss">
+	.list {
+		display: flex;
+		flex-direction: column;
+
+		@include des {
+			grid-gap: d(16);
+		}
+
+		@include tab {
+			grid-gap: t(16);
+		}
+
+		@include mob {
+			grid-gap: m(12);
+		}
+
+		&__item {
+			position: relative;
+			color: var(--eggplant);
+
+			.list--light & {
+				color: var(--white);
+			}
+
+			@include des {
+				padding-left: d(17);
+			}
+
+			@include tab {
+				padding-left: t(17);
+			}
+
+			@include mob {
+				padding-left: m(12);
+			}
+
+			.list--default & {
+				@include des {
+					font-size: d(18);
+					line-height: 140%;
+					letter-spacing: d(-0.027);
+				}
+
+				@include tab {
+					font-size: t(18);
+					line-height: 140%;
+					letter-spacing: t(-0.027);
+				}
+
+				@include mob {
+					font-size: m(14.5);
+					line-height: 130%;
+					letter-spacing: m(-0.072);
+				}
+			}
+
+			.list--big & {
+				@include des {
+					font-size: d(20);
+					line-height: 150%;
+					letter-spacing: d(-0.1);
+				}
+
+				@include tab {
+					font-size: t(20);
+					line-height: 150%;
+					letter-spacing: t(-0.1);
+				}
+
+				@include mob {
+					font-size: m(16);
+					line-height: 135%;
+					letter-spacing: m(-0.09);
+				}
+			}
+
+			.list--creative & {
+				line-height: 135%;
+
+				@include des {
+					font-size: d(20);
+					letter-spacing: d(-0.03);
+					padding-left: d(36);
+				}
+
+				@include tab {
+					font-size: t(20);
+					letter-spacing: t(-0.03);
+					padding-left: t(36);
+				}
+
+				@include mob {
+					font-size: m(16);
+					letter-spacing: m(-0.04);
+					padding-left: m(30);
+				}
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				border-radius: 50%;
+				background-color: var(--eggplant);
+
+				.list--light & {
+					background-color: var(--white);
+				}
+
+				@include des {
+					width: d(5);
+					height: d(5);
+					top: d(10);
+					left: d(2);
+				}
+
+				@include tab {
+					width: t(5);
+					height: t(5);
+					top: t(10);
+					left: t(2);
+				}
+
+				@include mob {
+					width: m(4);
+					height: m(4);
+					top: m(8);
+					left: m(1);
+				}
+
+				.list--creative & {
+					display: none;
+				}
+			}
+
+			&-check {
+				position: absolute;
+				left: 0;
+
+				@include des {
+					top: d(6);
+					right: d(4);
+					width: d(18);
+					height: d(18);
+				}
+
+				@include tab {
+					top: t(6);
+					right: t(4);
+					width: t(18);
+					height: t(18);
+				}
+
+				@include mob {
+					top: m(6);
+					right: m(2);
+					width: m(15);
+					height: m(15);
+				}
+			}
+		}
+	}
+</style>

@@ -1,0 +1,279 @@
+---
+const { title, mod, light, transparent, white, lang } = Astro.props;
+const { type, text } = title;
+
+const Tag = type ? type : 'p';
+---
+
+<Tag
+	class={`title${mod ? ` title--${mod}` : ''}${light ? ` title--light` : ''}${transparent ? ` title--transparent` : ''}${white ? ` title--white` : ''}`}
+	set:html={text[lang]}
+/>
+
+<style lang="scss">
+	.title {
+		color: var(--eggplant);
+
+		&--light {
+			color: var(--twilight);
+		}
+
+		&--transparent {
+			color: var(--transparent);
+
+			@include mob {
+				display: none;
+			}
+		}
+
+		&--white {
+			color: var(--pale-pink);
+		}
+
+		&--welcome {
+			font-weight: 600;
+			line-height: 125%;
+
+			@include des {
+				font-size: d(42);
+				letter-spacing: d(0.84);
+			}
+
+			@include tab {
+				font-size: t(42);
+				letter-spacing: t(0.84);
+			}
+
+			@include mob {
+				font-size: m(29.4);
+				letter-spacing: m(0.64);
+			}
+
+			:global(b) {
+				font-weight: 500;
+
+				@include des {
+					font-size: d(30);
+					letter-spacing: d(0.6);
+				}
+
+				@include tab {
+					font-size: t(30);
+					letter-spacing: t(0.6);
+				}
+
+				@include mob {
+					font-size: m(24);
+					letter-spacing: m(0.48);
+				}
+			}
+		}
+
+		&--about {
+			font-weight: 600;
+
+			@include des {
+				font-size: d(20);
+				letter-spacing: d(0.2);
+				line-height: 140%;
+				margin-bottom: d(16);
+			}
+
+			@include tab {
+				font-size: t(20);
+				letter-spacing: t(0.2);
+				line-height: 140%;
+				margin-bottom: t(16);
+			}
+
+			@include mob {
+				font-size: m(16);
+				margin-bottom: m(12);
+				line-height: 130%;
+			}
+		}
+
+		&--we-want {
+			font-weight: 500;
+			line-height: 115%;
+
+			@include des {
+				font-size: d(42);
+				letter-spacing: d(0.42);
+				margin-bottom: d(28);
+			}
+
+			@include tab {
+				font-size: t(42);
+				letter-spacing: t(0.42);
+				margin-bottom: t(28);
+			}
+
+			@include mob {
+				font-size: m(28);
+				letter-spacing: m(0.28);
+				margin-bottom: m(16);
+			}
+		}
+
+		&--creative-lis {
+			font-weight: 600;
+			line-height: 140%;
+
+			@include des {
+				font-size: d(20);
+				letter-spacing: d(0.2);
+				margin-bottom: d(16);
+			}
+
+			@include tab {
+				font-size: t(20);
+				letter-spacing: t(0.2);
+				margin-bottom: t(16);
+			}
+
+			@include mob {
+				font-size: m(16);
+				letter-spacing: m(0.04);
+				margin-bottom: m(16);
+			}
+		}
+
+		&--growth {
+			line-height: 115%;
+
+			@include des {
+				font-size: d(56);
+				letter-spacing: d(0.56);
+				margin-bottom: d(32);
+			}
+
+			@include tab {
+				font-size: t(56);
+				letter-spacing: t(0.56);
+				margin-bottom: t(32);
+			}
+
+			@include mob {
+				font-size: m(40);
+				letter-spacing: m(0.6);
+				margin-bottom: m(24);
+			}
+		}
+
+		&--chart {
+			line-height: 125%;
+
+			@include des {
+				font-size: d(36);
+				letter-spacing: d(0.54);
+			}
+
+			@include tab {
+				font-size: t(36);
+				letter-spacing: t(0.54);
+			}
+
+			@include mob {
+				font-size: m(22);
+				letter-spacing: m(0.33);
+			}
+		}
+
+		&--partners {
+			font-weight: 500;
+			line-height: 115%;
+			text-align: center;
+
+			@include des {
+				font-size: d(54);
+				letter-spacing: d(0.54);
+				margin-bottom: d(72);
+			}
+
+			@include tab {
+				font-size: t(54);
+				letter-spacing: t(0.54);
+				margin-bottom: t(72);
+			}
+
+			@include mob {
+				font-size: m(40);
+				letter-spacing: m(0.4);
+				margin-bottom: m(39);
+			}
+		}
+
+		&--partners-list {
+			font-weight: 500;
+			line-height: 115%;
+
+			@include des {
+				font-size: d(40);
+				letter-spacing: d(0.6);
+				margin-bottom: d(31);
+			}
+
+			@include tab {
+				font-size: t(40);
+				letter-spacing: t(0.6);
+				margin-bottom: t(31);
+			}
+
+			@include mob {
+				font-size: m(30);
+				letter-spacing: m(-0.3);
+				margin-bottom: m(16);
+			}
+		}
+
+		&--projects {
+			color: var(--twilight);
+			font-weight: 600;
+			line-height: 140%;
+
+			@include des {
+				font-size: d(20);
+				letter-spacing: d(0.2);
+				margin-bottom: d(24);
+			}
+
+			@include tab {
+				font-size: t(20);
+				letter-spacing: t(0.2);
+				margin-bottom: t(24);
+			}
+
+			@include mob {
+				font-size: m(16);
+				letter-spacing: m(0.08);
+				margin-bottom: m(24);
+				text-align: center;
+			}
+		}
+
+		&--identical {
+			line-height: 115%;
+
+			@include des {
+				font-size: d(48);
+				letter-spacing: d(0.48);
+				margin-bottom: d(48);
+				padding: 0 d(17);
+			}
+
+			@include tab {
+				font-size: t(48);
+				letter-spacing: t(0.48);
+				margin-bottom: t(48);
+				padding: 0 t(17);
+			}
+
+			@include mob {
+				font-size: m(28);
+				letter-spacing: m(0.28);
+				margin-bottom: m(42);
+			}
+		}
+	}
+</style>

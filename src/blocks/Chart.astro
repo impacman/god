@@ -1,0 +1,235 @@
+---
+import Container from '../components/Container.astro';
+import Title from '../components/Title.astro';
+import Descr from '../components/Descr.astro';
+import Button from '../components/Button.astro';
+import Picture from '../components/Picture.astro';
+
+import { title, button, items } from '../data/chart.json';
+
+const { lang } = Astro.props;
+---
+
+<div class="chart">
+	<Container>
+		<div class="chart__wrapper">
+			<div class="chart__head">
+				<Title lang={lang} title={title} mod={'chart'} />
+				<Button lang={lang} data={button} />
+			</div>
+			<div class="chart__grid">
+				{
+					items.map(({ descr, picture, info }, ind) => (
+						<div class="chart__item">
+							{descr && (
+								<div class="chart__item-descr">
+									<Descr lang={lang} descr={descr} />
+								</div>
+							)}
+							{picture && (
+								<div class="chart__item-picture">
+									<Picture picture={picture} format={ind == 2 ? 'jpg' : false} />
+								</div>
+							)}
+							{info && (
+								<div class="chart__item-info">
+									<Descr lang={lang} descr={info.price} mod={'chart-price'} />
+									<Descr lang={lang} descr={info.descr} mod={'chart'} />
+								</div>
+							)}
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</Container>
+</div>
+
+<style lang="scss">
+	.chart {
+		&__wrapper {
+			@include des {
+				padding: d(96) 0;
+			}
+
+			@include tab {
+				padding: t(96) 0;
+			}
+
+			@include mob {
+				padding: m(52) 0 m(39);
+			}
+		}
+
+		&__head {
+			display: grid;
+
+			@include des {
+				grid-template-columns: auto d(368);
+				grid-gap: d(45);
+				align-items: center;
+				padding: d(8) d(17);
+				margin-bottom: d(72);
+			}
+
+			@include tab {
+				grid-template-columns: auto t(368);
+				grid-gap: t(45);
+				align-items: center;
+				padding: t(8) t(17);
+				margin-bottom: t(72);
+			}
+
+			@include mob {
+				grid-template-columns: 1fr;
+				grid-gap: m(28);
+				margin-bottom: m(52);
+				text-align: center;
+			}
+		}
+
+		&__grid {
+			display: grid;
+
+			@include des {
+				grid-template-columns: 1fr 1fr;
+				grid-gap: d(24);
+			}
+
+			@include tab {
+				grid-template-columns: 1fr 1fr;
+				grid-gap: t(24);
+			}
+
+			@include mob {
+				grid-template-columns: 1fr;
+				grid-gap: m(26);
+			}
+		}
+
+		&__item {
+			position: relative;
+
+			&:nth-of-type(1) {
+				background-color: var(--lavender-blush);
+			}
+
+			&:nth-of-type(2) {
+				background-color: var(--white);
+				border-color: var(--mercury);
+				border-style: solid;
+
+				@include des {
+					border-width: d(1);
+				}
+
+				@include tab {
+					border-width: t(1);
+				}
+
+				@include mob {
+					border-width: m(1);
+				}
+			}
+
+			@include des {
+				width: 100%;
+				border-radius: d(32);
+
+				&:not(:last-of-type) {
+					height: d(566);
+				}
+
+				&:last-of-type {
+					grid-column-start: 1;
+					grid-column-end: 3;
+					aspect-ratio: 1/0.5;
+					height: d(624);
+				}
+			}
+
+			@include tab {
+				width: 100%;
+				border-radius: t(32);
+
+				&:not(:last-of-type) {
+					height: t(566);
+				}
+
+				&:last-of-type {
+					grid-column-start: 1;
+					grid-column-end: 3;
+					aspect-ratio: 1/0.5;
+					height: t(624);
+				}
+			}
+
+			@include mob {
+				width: calc(100% + m(24));
+				height: m(377);
+				margin-left: m(-12);
+				border-radius: m(22);
+
+				&:not(:last-of-type) .chart__item-picture {
+					height: 90%;
+				}
+			}
+
+			&-picture {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 1;
+				overflow: hidden;
+				border-radius: inherit;
+			}
+
+			&-descr {
+				position: absolute;
+				left: 0;
+				width: 100%;
+				text-align: center;
+				z-index: 2;
+
+				@include des {
+					bottom: d(56);
+				}
+
+				@include tab {
+					bottom: t(56);
+				}
+
+				@include mob {
+					bottom: m(33);
+					padding: 0 m(30);
+				}
+			}
+
+			&-info {
+				position: absolute;
+				z-index: 2;
+
+				@include des {
+					width: d(613);
+					left: d(54);
+					bottom: d(54);
+				}
+
+				@include tab {
+					width: t(613);
+					left: t(54);
+					bottom: t(54);
+				}
+
+				@include mob {
+					width: 100%;
+					left: 0;
+					bottom: 0;
+					padding: m(34) m(25);
+				}
+			}
+		}
+	}
+</style>

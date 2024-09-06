@@ -1,0 +1,94 @@
+---
+import Container from '../components/Container.astro';
+import Title from '../components/Title.astro';
+import Descr from '../components/Descr.astro';
+import List from '../components/List.astro';
+import Picture from '../components/Picture.astro';
+
+import { title, list, picture } from '../data/growth.json';
+
+const { lang } = Astro.props;
+---
+
+<div class="growth">
+	<Container>
+		<div class="growth__grid">
+			<div class="growth__wrap">
+				<Title lang={lang} title={title} mod={'growth'} />
+				<div class="growth__img growth__img--mobile">
+					<Picture picture={picture} />
+				</div>
+				<List lang={lang} list={list} mod={'big'} />
+			</div>
+			<div class="growth__img growth__img--desktop">
+				<Picture picture={picture} />
+			</div>
+		</div>
+	</Container>
+</div>
+
+<style lang="scss">
+	.growth {
+		background-color: var(--athens-gray);
+
+		&__grid {
+			display: grid;
+
+			@include des {
+				padding: d(102) 0 d(122);
+				grid-template-columns: d(590) auto;
+				grid-gap: d(10);
+				justify-content: space-between;
+			}
+
+			@include tab {
+				padding: t(144) 0 t(120);
+				grid-template-columns: t(504) auto;
+				grid-gap: t(10);
+				justify-content: space-between;
+			}
+
+			@include mob {
+				padding: m(45) 0 m(58);
+			}
+		}
+
+		&__wrap {
+			width: 100%;
+		}
+
+		&__img {
+			position: relative;
+
+			@include des {
+				width: d(521);
+				height: d(439);
+				margin-top: d(8);
+
+				&--mobile {
+					display: none;
+				}
+			}
+
+			@include tab {
+				width: t(521);
+				height: t(439);
+				margin-top: t(8);
+
+				&--mobile {
+					display: none;
+				}
+			}
+
+			@include mob {
+				width: m(269);
+				height: m(227);
+				margin: 0 auto m(43);
+
+				&--desktop {
+					display: none;
+				}
+			}
+		}
+	}
+</style>

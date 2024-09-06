@@ -1,0 +1,41 @@
+{
+	"title": {
+		"type": "h1",
+		"text": {
+			"en": "Eliminate<br class='desktop'> barriers&nbsp;with GirlsOnlyDating<b>.com</b>",
+			"ru": "Преодолейте<br class='mobile'> границы с GirlsOnlyDating<b>.com</b>",
+			"es": "Elimina<br class='mobile'> barreras con GirlsOnlyDating<b>.com</b>"
+		}
+	},
+	"list": {
+		"text": {
+			"en": [
+				"You want to start own business with a worldwide online-dating leader?",
+				"You have essential management experience, communication skills and speak English or Spanish?"
+			],
+			"ru": [
+				"Вы хотите начать свой бизнес с мировым лидером онлайн-знакомств?",
+				"У вас есть необходимый управленческий опыт, коммуникативные навыки и вы говорите по-английски или по-испански?"
+			],
+			"es": [
+				"¿Quieres empezar tu propio negocio con el líder mundial de citas online?",
+				"¿Tienes experiencia en gestión, comunicación y hablas inglés o español?"
+			]
+		}
+	},
+	"button": {
+		"href": "#contact-us",
+		"text": {
+			"en": "Become our Partner today!",
+			"ru": "Станьте нашим партнером уже сегодня!",
+			"es": "¡Conviértete en nuestro socio hoy mismo!"
+		}
+	},
+	"picture": {
+		"srcadapive": {
+			"desktop": "hero-desktop",
+			"mobile": "hero-mobile"
+		},
+		"alt": "Hero"
+	}
+}

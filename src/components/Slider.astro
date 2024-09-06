@@ -1,0 +1,242 @@
+---
+import Picture from './Picture.astro';
+import Heart from '../svg/Heart.astro';
+
+const items = Astro.props.items;
+
+const hearts = [0, 1, 2, 3, 4];
+---
+
+<div class="slider swiper" data-slider>
+	<div class="swiper-wrapper">
+		{
+			items.map(({ descr, user }) => (
+				<div class="slider__item swiper-slide">
+					<div class="slider__item-hearts">
+						{hearts.map((el) => (
+							<div class="slider__item-heart">
+								<Heart />
+							</div>
+						))}
+					</div>
+					<div class="slider__item-descr" set:html={descr} data-slider-descr />
+					{descr.length > 323 ? (
+						<div class="slider__item-more" data-slider-more>
+							Read more
+						</div>
+					) : (
+						<div class="slider__item-more">&nbsp;</div>
+					)}
+					<div class="slider__item-user user">
+						<div class="user__avatar">
+							<Picture picture={user.picture} />
+						</div>
+						<div class="user__info">{user.name}</div>
+					</div>
+				</div>
+			))
+		}
+	</div>
+</div>
+
+<style lang="scss">
+	.slider {
+		overflow: visible;
+
+		&__item {
+			background-color: var(--wisp-pink);
+			// height: auto;
+
+			@include des {
+				border-radius: d(20);
+				padding: d(56) d(48) d(48);
+			}
+
+			@include tab {
+				border-radius: t(20);
+				padding: t(56) t(48) t(48);
+			}
+
+			@include mob {
+				border-radius: m(17);
+				padding: m(42) m(30) m(38);
+			}
+
+			&-hearts {
+				display: flex;
+
+				@include des {
+					grid-gap: d(4);
+					margin-bottom: d(24);
+				}
+
+				@include tab {
+					grid-gap: t(4);
+					margin-bottom: t(24);
+				}
+
+				@include mob {
+					grid-gap: m(3);
+					margin-bottom: m(20);
+				}
+			}
+
+			&-heart {
+				position: relative;
+
+				@include des {
+					width: d(14);
+					height: d(14);
+				}
+
+				@include tab {
+					width: t(14);
+					height: t(14);
+				}
+
+				@include mob {
+					width: m(12);
+					height: m(12);
+				}
+			}
+
+			&-descr {
+				overflow: hidden;
+				color: var(--eggplant);
+				line-height: 135%;
+				font-family: var(--font-dm-sans);
+				font-weight: 300;
+
+				:global(b) {
+					font-weight: 400;
+				}
+
+				&.show {
+					height: auto;
+				}
+
+				@include des {
+					height: d(220);
+					font-size: d(18);
+					margin-bottom: d(8);
+				}
+
+				@include tab {
+					height: t(220);
+					font-size: t(18);
+					margin-bottom: t(8);
+				}
+
+				@include mob {
+					height: m(284);
+					font-size: m(16);
+					margin-bottom: m(7);
+				}
+			}
+
+			&-more {
+				font-family: var(--font-dm-sans);
+				color: var(--twilight);
+				font-weight: 500;
+				line-height: 130%;
+
+				@include des {
+					font-size: d(16.5);
+				}
+
+				@include tab {
+					font-size: t(16.5);
+				}
+
+				@include mob {
+					font-size: m(14);
+				}
+			}
+
+			& .user {
+				display: grid;
+				align-items: center;
+
+				@include des {
+					grid-template-columns: d(48) 1fr;
+					margin-top: d(29);
+					grid-gap: d(16);
+				}
+
+				@include tab {
+					grid-template-columns: t(48) 1fr;
+					margin-top: t(29);
+					grid-gap: t(16);
+				}
+
+				@include mob {
+					grid-template-columns: m(40) 1fr;
+					margin-top: m(26);
+					grid-gap: m(13);
+				}
+
+				&__avatar {
+					position: relative;
+					width: 100%;
+					aspect-ratio: 1/1;
+					border-radius: 50%;
+					overflow: hidden;
+				}
+
+				&__info {
+					font-family: var(--font-dm-sans);
+					color: var(--eggplant);
+					font-weight: 700;
+					line-height: 130%;
+
+					@include des {
+						font-size: d(16);
+						letter-spacing: d(-0.045);
+					}
+
+					@include tab {
+						font-size: t(16);
+						letter-spacing: t(-0.045);
+					}
+
+					@include mob {
+						font-size: m(15);
+						letter-spacing: m(-0.038);
+					}
+				}
+			}
+		}
+	}
+</style>
+
+<script>
+	import Swiper from 'swiper';
+	import { Navigation, Pagination, Parallax } from 'swiper/modules';
+	import 'swiper/css';
+
+	const slider = document.querySelector('[data-slider]');
+	const moreEls = document.querySelectorAll('[data-slider-more]');
+
+	slider &&
+		new Swiper(slider as HTMLElement, {
+			breakpoints: {
+				0: {
+					slidesPerView: 1.14,
+					spaceBetween: '4.2%'
+				},
+				481: {
+					slidesPerView: 2.6,
+					spaceBetween: '1.4%'
+				}
+			}
+		});
+
+	moreEls.forEach((more) => {
+		more.addEventListener('click', () => {
+			const parent = more.parentElement;
+			const descr = parent.querySelector('[data-slider-descr]');
+
+			descr.classList.toggle('show');
+		});
+	});
+</script>

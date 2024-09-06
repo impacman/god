@@ -1,0 +1,191 @@
+---
+import Container from '../components/Container.astro';
+import Title from '../components/Title.astro';
+import List from '../components/List.astro';
+import Dev from '../components/Dev.astro';
+import Button from '../components/Button.astro';
+import Picture from '../components/Picture.astro';
+
+import DMA from '../svg/Projects/DMA.astro';
+import YCD from '../svg/Projects/YCD.astro';
+import HO from '../svg/Projects/HO.astro';
+import YTM from '../svg/Projects/YTM.astro';
+import AML from '../svg/Projects/AML.astro';
+import GOD from '../svg/Projects/GOD.astro';
+import ASD from '../svg/Projects/ASD.astro';
+import PD from '../svg/Projects/PD.astro';
+
+import { title, items, projects } from '../data/partners.json';
+
+const { lang } = Astro.props;
+---
+
+<div class="partners" id="partners">
+	<Container>
+		<div class="partners__wrap">
+			<Title lang={lang} title={title} mod={'partners'} />
+			<div class="partners__block">
+				{
+					items.map(({ title, listtitle, list, button, picture }) => (
+						<div class="partners__item">
+							{picture && (
+								<div class="partners__item-img">
+									<Picture picture={picture} />
+								</div>
+							)}
+							<Title
+								lang={lang}
+								title={title}
+								mod={'partners-list'}
+								transparent={title.transparent ? true : false}
+								white={title.white ? true : false}
+							/>
+							<Title lang={lang} title={listtitle} mod={'creative-lis'} light />
+							<Dev mod={'min'} light />
+							<List lang={lang} list={list} mod={list.creative ? 'creative' : false} light />
+							{button && <Button lang={lang} data={button} mod={'list'} light />}
+						</div>
+					))
+				}
+			</div>
+			<div class="partners__projects">
+				<Title lang={lang} title={projects.title} mod={'projects'} />
+				<div class="partners__projects-grid">
+					<DMA />
+					<YCD />
+					<HO />
+					<YTM />
+					<AML />
+					<GOD />
+					<ASD />
+					<PD />
+				</div>
+			</div>
+		</div>
+	</Container>
+</div>
+
+<style lang="scss">
+	.partners {
+		&__wrap {
+			@include des {
+				padding: d(48) 0 d(128);
+			}
+
+			@include tab {
+				padding: t(48) 0 t(128);
+			}
+
+			@include mob {
+				padding: m(76) 0 m(32);
+			}
+		}
+
+		&__block {
+			display: grid;
+
+			@include des {
+				grid-template-columns: 1fr 1fr;
+				grid-gap: d(108);
+				border-radius: d(32);
+				padding: d(57) d(72) d(66);
+				background-color: var(--eggplant);
+				margin-bottom: d(96);
+			}
+
+			@include tab {
+				grid-template-columns: 1fr 1fr;
+				grid-gap: t(108);
+				border-radius: t(32);
+				padding: t(57) t(72) t(66);
+				background-color: var(--eggplant);
+				margin-bottom: t(96);
+			}
+
+			@include mob {
+				grid-template-columns: 1fr;
+				grid-gap: m(26);
+				background-color: var(--transparent);
+				margin-bottom: m(52);
+			}
+		}
+
+		&__item {
+			position: relative;
+			width: 100%;
+
+			@include mob {
+				width: calc(100% + m(24));
+				margin-left: m(-12);
+				background-color: var(--eggplant);
+				border-radius: m(20);
+				padding: m(47) m(28) m(51);
+			}
+
+			&-img {
+				@include des {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: d(236);
+					height: d(80);
+				}
+
+				@include tab {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: t(236);
+					height: t(80);
+				}
+
+				@include mob {
+					position: relative;
+					width: m(154);
+					height: m(52);
+					margin-bottom: m(28);
+				}
+			}
+		}
+
+		&__projects {
+			@include des {
+				padding: 0 d(17);
+			}
+
+			@include tab {
+				padding: 0 t(17);
+			}
+
+			@include mob {
+			}
+
+			&-grid {
+				width: 100%;
+				display: grid;
+
+				@include des {
+					grid-template-columns: repeat(4, 1fr);
+					grid-gap: d(16) d(48);
+					margin: 0 d(-17);
+				}
+
+				@include tab {
+					grid-template-columns: repeat(4, 1fr);
+					grid-gap: t(16) t(48);
+					margin: 0 t(-17);
+				}
+
+				@include mob {
+					grid-template-columns: repeat(2, 1fr);
+					grid-gap: m(12) m(16);
+				}
+
+				& svg {
+					width: 100%;
+					height: 76px;
+				}
+			}
+		}
+	}
+</style>

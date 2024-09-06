@@ -1,0 +1,216 @@
+---
+import Container from './Container.astro';
+import Logo from './Logo.astro';
+import Lang from './Lang.astro';
+
+const { lang } = Astro.props;
+---
+
+<div class="header">
+	<Container>
+		<div class="header__wrap">
+			<Logo />
+			<nav class="header__nav">
+				<a href="#about" class="header__nav-item">Our growth</a>
+				<a href="#partners" class="header__nav-item">Our Affiliate Partners</a>
+				<a href="#faq" class="header__nav-item">FAQ</a>
+				<a href="#contact-us" class="header__nav-item">Contact us</a>
+			</nav>
+			<div class="header__actions">
+				<a href="#contact-us" class="header__join">Join us</a>
+				<Lang lang={lang} />
+			</div>
+		</div>
+	</Container>
+</div>
+
+<style lang="scss">
+	.header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background-color: var(--transparent);
+		z-index: 9999;
+		transition: transform 0.7s ease 0s;
+
+		&.hide {
+			transform: translateY(-100%);
+		}
+
+		&.scroll {
+			background-color: var(--white);
+		}
+
+		&__wrap {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			@include des {
+				width: 100%;
+				height: d(88);
+			}
+
+			@include tab {
+				width: 100%;
+				height: t(88);
+			}
+
+			@include mob {
+				width: 100vw;
+				height: m(73);
+				margin: 0 m(-32);
+				padding: 0 m(20);
+			}
+		}
+
+		&__nav {
+			display: flex;
+			align-items: center;
+
+			@include des {
+				grid-gap: d(39);
+			}
+
+			@include tab {
+				grid-gap: t(39);
+			}
+
+			@include mob {
+				display: none;
+			}
+
+			&-item {
+				color: var(--white);
+				font-weight: 600;
+				transition: color 0.1s ease 0s;
+
+				.scroll & {
+					color: var(--eggplant);
+				}
+
+				@include des {
+					font-size: d(17);
+					letter-spacing: d(-0.026);
+				}
+
+				@include tab {
+					font-size: t(17);
+					letter-spacing: t(-0.026);
+				}
+
+				@include mob {
+				}
+
+				@media (hover: hover) {
+					cursor: pointer;
+					transition-duration: 0.3s;
+
+					&:hover {
+						color: var(--twilight) !important;
+					}
+				}
+
+				&:active {
+					color: var(--twilight) !important;
+				}
+			}
+		}
+
+		&__actions {
+			display: flex;
+
+			@include des {
+				grid-gap: d(16);
+			}
+
+			@include tab {
+				grid-gap: t(16);
+			}
+
+			@include mob {
+			}
+		}
+
+		&__join {
+			background-color: var(--white);
+			color: var(--eggplant);
+			font-weight: 600;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			.scroll & {
+				background-color: var(--athens-gray);
+			}
+
+			@include des {
+				width: d(164);
+				height: d(44);
+				border-radius: d(100);
+				font-size: d(16);
+			}
+
+			@include tab {
+				width: t(164);
+				height: t(44);
+				border-radius: t(100);
+				font-size: t(16);
+			}
+
+			@include mob {
+				width: m(88);
+				height: m(42);
+				border-radius: m(100);
+				font-size: m(14.5);
+				letter-spacing: m(-0.051);
+				display: none;
+
+				.scroll & {
+					display: flex;
+				}
+			}
+
+			@media (hover: hover) {
+				cursor: pointer;
+				transition-duration: 0.3s;
+
+				&:hover {
+					background-color: var(--twilight) !important;
+				}
+			}
+
+			&:active {
+				background-color: var(--twilight) !important;
+			}
+		}
+	}
+</style>
+
+<script>
+	const header = document.querySelector('.header');
+	const logo = document.querySelector('.logo');
+	const lang = document.querySelector('.lang');
+
+	window.addEventListener('scroll', () => {
+		const scroll = window.scrollY;
+
+		if (scroll > 100) {
+			header.classList.add('hide');
+
+			if (scroll > 800) {
+				header.classList.add('scroll');
+				logo.classList.add('scroll');
+				lang.classList.add('scroll');
+				header.classList.remove('hide');
+			}
+		} else {
+			header.classList.remove('scroll');
+			logo.classList.remove('scroll');
+			lang.classList.remove('scroll');
+
+			if (scroll < 300) header.classList.remove('hide');
+		}
+	});
+</script>
